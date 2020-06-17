@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qfg-Nd-2tU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="K9A-zI-05T">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -15,32 +15,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="203" translatesAutoresizingMaskIntoConstraints="NO" id="FMm-4G-zUE">
-                                <rect key="frame" x="47" y="386" width="339" height="32"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaA-aj-8kz">
+                                <rect key="frame" x="37" y="515.5" width="340" height="50"/>
+                                <color key="backgroundColor" red="0.40149786799999998" green="0.38501282149999999" blue="0.78765853730000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Rating 1-2">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="rateButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="STW-Bm-8sR"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="203" translatesAutoresizingMaskIntoConstraints="NO" id="FMm-4G-zUE">
+                                <rect key="frame" x="37" y="345" width="340" height="32"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGh-Yq-0Da">
-                                        <rect key="frame" x="0.0" y="0.0" width="42" height="32"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGh-Yq-0Da">
+                                        <rect key="frame" x="0.0" y="0.0" width="43" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="QTs-FG-pZL">
-                                        <rect key="frame" x="245" y="0.0" width="94" height="32"/>
+                                        <rect key="frame" x="246" y="0.0" width="94" height="32"/>
+                                        <connections>
+                                            <action selector="stepperValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="pRO-E8-qBj"/>
+                                        </connections>
                                     </stepper>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaA-aj-8kz">
-                                <rect key="frame" x="47" y="487" width="339" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Rate"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="GaA-aj-8kz" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.0558036" id="0wH-G2-48h"/>
+                            <constraint firstItem="FMm-4G-zUE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="Gpq-Bo-WXd"/>
+                            <constraint firstItem="GaA-aj-8kz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="Rs2-x8-4yJ"/>
+                            <constraint firstItem="GaA-aj-8kz" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="TGM-ME-MFa"/>
+                            <constraint firstItem="FMm-4G-zUE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="UIv-eK-vMb"/>
+                            <constraint firstItem="GaA-aj-8kz" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="1.2" id="cx7-SO-x3d"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="GaA-aj-8kz" secondAttribute="trailing" constant="37" id="fgp-ez-15I"/>
+                            <constraint firstItem="FMm-4G-zUE" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" multiplier="0.8" constant="0.5" id="gfd-sK-fbT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="FMm-4G-zUE" secondAttribute="trailing" constant="37" id="kJG-Sj-LCh"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ckz-XH-6A9"/>
                     <connections>
-                        <segue destination="HyM-vW-LwD" kind="show" id="QuZ-dr-aJC"/>
+                        <outlet property="rateButton" destination="GaA-aj-8kz" id="irg-Ye-sxw"/>
+                        <outlet property="rateLabel" destination="iGh-Yq-0Da" id="nMj-T4-Wpz"/>
+                        <outlet property="ratingStepper" destination="QTs-FG-pZL" id="569-JS-68C"/>
+                        <segue destination="HyM-vW-LwD" kind="show" identifier="rating" id="QuZ-dr-aJC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -55,20 +78,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ihi-xZ-EP6">
-                                <rect key="frame" x="54" y="312" width="306" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ihi-xZ-EP6">
+                                <rect key="frame" x="54" y="345.5" width="306" height="31"/>
                             </slider>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pnf-rR-W2K">
-                                <rect key="frame" x="56" y="472" width="302" height="58"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pnf-rR-W2K">
+                                <rect key="frame" x="56" y="511.5" width="302" height="58"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <state key="normal" title="Save Rating">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="HyM-vW-LwD" eventType="touchUpInside" id="Rvh-D7-Age"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Pnf-rR-W2K" firstAttribute="centerY" secondItem="hhZ-yx-m3J" secondAttribute="centerY" multiplier="1.2" id="1Ib-IL-4xd"/>
+                            <constraint firstItem="Pnf-rR-W2K" firstAttribute="centerX" secondItem="hhZ-yx-m3J" secondAttribute="centerX" id="1LR-7b-7NA"/>
+                            <constraint firstItem="ihi-xZ-EP6" firstAttribute="centerX" secondItem="hhZ-yx-m3J" secondAttribute="centerX" id="3e0-2b-irS"/>
+                            <constraint firstItem="Pnf-rR-W2K" firstAttribute="width" secondItem="9l3-E5-LRg" secondAttribute="width" multiplier="0.729469" id="7Ew-WR-rtr"/>
+                            <constraint firstItem="ihi-xZ-EP6" firstAttribute="width" secondItem="hhZ-yx-m3J" secondAttribute="width" multiplier="0.729469" id="8cj-Of-2oj"/>
+                            <constraint firstItem="ihi-xZ-EP6" firstAttribute="centerY" secondItem="hhZ-yx-m3J" secondAttribute="centerY" multiplier="0.8" id="FlW-tE-Dhi"/>
+                            <constraint firstItem="Pnf-rR-W2K" firstAttribute="height" secondItem="9l3-E5-LRg" secondAttribute="height" multiplier="0.0647321" id="bea-4C-Ezl"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="hhZ-yx-m3J"/>
                     </view>
                     <navigationItem key="navigationItem" id="G8r-PW-Urp"/>
+                    <connections>
+                        <outlet property="rating" destination="ihi-xZ-EP6" id="4MM-yH-ybw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JDa-zy-4UC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -77,7 +117,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="win-QC-mjq">
             <objects>
-                <tabBarController id="K9A-zI-05T" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBar" id="K9A-zI-05T" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EBq-e5-B1P">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
