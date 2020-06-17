@@ -19,14 +19,18 @@ class RateViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupSlider()
+    }
 
-        // Do any additional setup after loading the view.
+    fileprivate func setupSlider() {
+        rating.maximumValue = Float(rateLimit)
+        rating.minimumValue = 1.0
+        rating.value = 1.0
     }
 
     override func viewDidAppear(_ animated: Bool) {
         self.navigationItem.title = "Rate"
-        rating.maximumValue = Float(rateLimit)
-        rating.minimumValue = 1.0
+        setupSlider()
     }
 
     @IBAction func sliderMoved(_ sender: UISlider) {

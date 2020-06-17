@@ -68,21 +68,53 @@
 		86074E6F2498E1EB00B40E2B /* iRate */ = {
 			isa = PBXGroup;
 			children = (
-				86074E702498E1EB00B40E2B /* AppDelegate.swift */,
-				86074E722498E1EB00B40E2B /* SceneDelegate.swift */,
-				86074E742498E1EB00B40E2B /* ViewController.swift */,
-				86074E94249A6A0600B40E2B /* Rating.xcdatamodeld */,
-				86074E92249A5AEC00B40E2B /* RateViewController.swift */,
-				86074E97249A6B0C00B40E2B /* DataController.swift */,
-				86074E99249A796600B40E2B /* RatingTabBarViewController.swift */,
-				86074E9B249A93A800B40E2B /* HistoryViewController.swift */,
-				86074E9D249A971E00B40E2B /* HistoryTableViewCell.swift */,
-				86074E762498E1EB00B40E2B /* Main.storyboard */,
+				86074EA2249AA3F500B40E2B /* View */,
+				86074EA0249AA39100B40E2B /* Controller */,
+				86074EA1249AA3DD00B40E2B /* Core Data */,
+				86074E9F249AA33800B40E2B /* Helper */,
 				86074E792498E1ED00B40E2B /* Assets.xcassets */,
-				86074E7B2498E1ED00B40E2B /* LaunchScreen.storyboard */,
 				86074E7E2498E1EE00B40E2B /* Info.plist */,
 			);
 			path = iRate;
+			sourceTree = "<group>";
+		};
+		86074E9F249AA33800B40E2B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				86074E702498E1EB00B40E2B /* AppDelegate.swift */,
+				86074E722498E1EB00B40E2B /* SceneDelegate.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		86074EA0249AA39100B40E2B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				86074E742498E1EB00B40E2B /* ViewController.swift */,
+				86074E92249A5AEC00B40E2B /* RateViewController.swift */,
+				86074E99249A796600B40E2B /* RatingTabBarViewController.swift */,
+				86074E9B249A93A800B40E2B /* HistoryViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		86074EA1249AA3DD00B40E2B /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				86074E94249A6A0600B40E2B /* Rating.xcdatamodeld */,
+				86074E97249A6B0C00B40E2B /* DataController.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		86074EA2249AA3F500B40E2B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				86074E9D249A971E00B40E2B /* HistoryTableViewCell.swift */,
+				86074E762498E1EB00B40E2B /* Main.storyboard */,
+				86074E7B2498E1ED00B40E2B /* LaunchScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

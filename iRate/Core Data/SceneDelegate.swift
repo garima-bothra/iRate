@@ -20,17 +20,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let controller = RatingTabBarViewController()
             controller.dataController = dataController
             controller.selectedIndex = 0
-//            let navigateController = UINavigationController(rootViewController: ViewController())
-//            let navigationController = controller.selectedViewController as! UINavigationController(rootViewController: ViewController())
-//            let selectedController = navigationController.viewControllers[0]
-//            let navigationController  = controller.selectedViewController as! UINavigationController
-//             let controllers = navigationController.viewControllers // will give array
-//             if controllers.count > 0 {
-//                 if let viewC = controllers[0] as? ViewController {
-//                    viewC.dataController = dataController
-//                // do desired work
-//                }
-//            }
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             guard let rootVC = storyboard.instantiateViewController(identifier: "TabBar") as? RatingTabBarViewController else {
                 print("ViewController not found")
@@ -52,13 +41,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             navVC.tabBarItem = UITabBarItem(title: "Rate", image: UIImage(systemName: "plus", withConfiguration: UIImage.SymbolConfiguration(weight: .heavy)), tag: 0)
             navVC2.tabBarItem = UITabBarItem(title: "History", image: UIImage(systemName: "line.horizontal.3", withConfiguration: UIImage.SymbolConfiguration(weight: .heavy)), tag: 1)
             rootVC.setViewControllers([navVC, navVC2], animated: true)
-            //let rootNC = UINavigationController(rootViewController: rootVC)
             window.rootViewController = rootVC
-       //     window.rootViewController = rootVC
             self.window = window
             window.makeKeyAndVisible()
         }
-        //guard let _ = (scene as? UIWindowScene) else { return }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

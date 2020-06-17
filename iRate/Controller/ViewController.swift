@@ -19,8 +19,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let tabController = self.tabBarController as! RatingTabBarViewController
-       // dataController = tabController.dataController
         ratingStepper.maximumValue = 9.0
         ratingStepper.minimumValue = 2.0
         // Do any additional setup after loading the view.
