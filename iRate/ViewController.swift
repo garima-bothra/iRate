@@ -21,6 +21,10 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationItem.title = "Rate Limit"
+    }
+
     @IBAction func stepperValueChanged(_ sender: UIStepper) {
         rateLabel.text = Int(sender.value).description
         rateButton.setTitle("Rating 1-\(Int(sender.value))", for: UIControl.State.normal) 

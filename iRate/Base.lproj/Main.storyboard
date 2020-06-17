@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaA-aj-8kz">
-                                <rect key="frame" x="37" y="515.5" width="340" height="50"/>
+                                <rect key="frame" x="37" y="547" width="340" height="50"/>
                                 <color key="backgroundColor" red="0.40149786799999998" green="0.38501282149999999" blue="0.78765853730000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Rating 1-2">
@@ -27,7 +27,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="203" translatesAutoresizingMaskIntoConstraints="NO" id="FMm-4G-zUE">
-                                <rect key="frame" x="37" y="345" width="340" height="32"/>
+                                <rect key="frame" x="37" y="365.5" width="340" height="32"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iGh-Yq-0Da">
                                         <rect key="frame" x="0.0" y="0.0" width="43" height="32"/>
@@ -58,7 +58,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Ckz-XH-6A9"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="Ckz-XH-6A9"/>
                     <connections>
                         <outlet property="rateButton" destination="GaA-aj-8kz" id="irg-Ye-sxw"/>
                         <outlet property="rateLabel" destination="iGh-Yq-0Da" id="nMj-T4-Wpz"/>
@@ -80,6 +80,9 @@
                         <subviews>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="ihi-xZ-EP6">
                                 <rect key="frame" x="54" y="345.5" width="306" height="31"/>
+                                <connections>
+                                    <action selector="sliderMoved:" destination="HyM-vW-LwD" eventType="valueChanged" id="JWN-Yn-5A5"/>
+                                </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pnf-rR-W2K">
                                 <rect key="frame" x="56" y="511.5" width="302" height="58"/>
@@ -92,6 +95,12 @@
                                     <action selector="saveButtonPressed:" destination="HyM-vW-LwD" eventType="touchUpInside" id="Rvh-D7-Age"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating: 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXg-H5-agI">
+                                <rect key="frame" x="56" y="247" width="302" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -101,18 +110,22 @@
                             <constraint firstItem="Pnf-rR-W2K" firstAttribute="width" secondItem="9l3-E5-LRg" secondAttribute="width" multiplier="0.729469" id="7Ew-WR-rtr"/>
                             <constraint firstItem="ihi-xZ-EP6" firstAttribute="width" secondItem="hhZ-yx-m3J" secondAttribute="width" multiplier="0.729469" id="8cj-Of-2oj"/>
                             <constraint firstItem="ihi-xZ-EP6" firstAttribute="centerY" secondItem="hhZ-yx-m3J" secondAttribute="centerY" multiplier="0.8" id="FlW-tE-Dhi"/>
+                            <constraint firstItem="nXg-H5-agI" firstAttribute="width" secondItem="9l3-E5-LRg" secondAttribute="width" multiplier="0.729469" id="KDw-13-xmV"/>
                             <constraint firstItem="Pnf-rR-W2K" firstAttribute="height" secondItem="9l3-E5-LRg" secondAttribute="height" multiplier="0.0647321" id="bea-4C-Ezl"/>
+                            <constraint firstItem="ihi-xZ-EP6" firstAttribute="top" secondItem="nXg-H5-agI" secondAttribute="bottom" constant="68.5" id="c1R-Ah-BH1"/>
+                            <constraint firstItem="nXg-H5-agI" firstAttribute="centerX" secondItem="hhZ-yx-m3J" secondAttribute="centerX" id="x6E-UO-x9Z"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hhZ-yx-m3J"/>
                     </view>
-                    <navigationItem key="navigationItem" id="G8r-PW-Urp"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="G8r-PW-Urp"/>
                     <connections>
+                        <outlet property="rateLabel" destination="nXg-H5-agI" id="iQZ-aN-az9"/>
                         <outlet property="rating" destination="ihi-xZ-EP6" id="4MM-yH-ybw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JDa-zy-4UC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2368.1159420289855" y="-475.44642857142856"/>
+            <point key="canvasLocation" x="2366.666666666667" y="-475.44642857142856"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="win-QC-mjq">
@@ -154,8 +167,8 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qfg-Nd-2tU" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="Nfg-M3-GZY"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1MT-la-cao">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="1MT-la-cao">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
