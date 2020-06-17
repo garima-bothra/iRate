@@ -27,7 +27,8 @@ class ViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
-        self.navigationItem.title = "Rate Limit"
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.topItem?.title = "Rate Limit"
     }
 
     @IBAction func stepperValueChanged(_ sender: UIStepper) {

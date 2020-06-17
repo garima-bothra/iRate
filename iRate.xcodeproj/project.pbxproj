@@ -17,6 +17,7 @@
 		86074E96249A6A0600B40E2B /* Rating.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 86074E94249A6A0600B40E2B /* Rating.xcdatamodeld */; };
 		86074E98249A6B0C00B40E2B /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86074E97249A6B0C00B40E2B /* DataController.swift */; };
 		86074E9A249A796600B40E2B /* RatingTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86074E99249A796600B40E2B /* RatingTabBarViewController.swift */; };
+		86074E9C249A93A800B40E2B /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86074E9B249A93A800B40E2B /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		86074E95249A6A0600B40E2B /* Rating.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Rating.xcdatamodel; sourceTree = "<group>"; };
 		86074E97249A6B0C00B40E2B /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		86074E99249A796600B40E2B /* RatingTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTabBarViewController.swift; sourceTree = "<group>"; };
+		86074E9B249A93A800B40E2B /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				86074E92249A5AEC00B40E2B /* RateViewController.swift */,
 				86074E97249A6B0C00B40E2B /* DataController.swift */,
 				86074E99249A796600B40E2B /* RatingTabBarViewController.swift */,
+				86074E9B249A93A800B40E2B /* HistoryViewController.swift */,
 				86074E762498E1EB00B40E2B /* Main.storyboard */,
 				86074E792498E1ED00B40E2B /* Assets.xcassets */,
 				86074E7B2498E1ED00B40E2B /* LaunchScreen.storyboard */,
@@ -157,6 +160,7 @@
 				86074E9A249A796600B40E2B /* RatingTabBarViewController.swift in Sources */,
 				86074E732498E1EB00B40E2B /* SceneDelegate.swift in Sources */,
 				86074E96249A6A0600B40E2B /* Rating.xcdatamodeld in Sources */,
+				86074E9C249A93A800B40E2B /* HistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
