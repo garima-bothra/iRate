@@ -36,7 +36,11 @@ class HistoryViewController: UIViewController {
         setupFetchedResultsController()
         // Do any additional setup after loading the view.
     }
-    
+
+    override func viewDidAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationController?.navigationBar.topItem?.title = "Rating History"
+    }
 
     /*
     // MARK: - Navigation
