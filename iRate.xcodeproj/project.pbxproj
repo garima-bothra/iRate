@@ -18,6 +18,7 @@
 		86074E98249A6B0C00B40E2B /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86074E97249A6B0C00B40E2B /* DataController.swift */; };
 		86074E9A249A796600B40E2B /* RatingTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86074E99249A796600B40E2B /* RatingTabBarViewController.swift */; };
 		86074E9C249A93A800B40E2B /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86074E9B249A93A800B40E2B /* HistoryViewController.swift */; };
+		86074E9E249A971E00B40E2B /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86074E9D249A971E00B40E2B /* HistoryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		86074E97249A6B0C00B40E2B /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		86074E99249A796600B40E2B /* RatingTabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingTabBarViewController.swift; sourceTree = "<group>"; };
 		86074E9B249A93A800B40E2B /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		86074E9D249A971E00B40E2B /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				86074E97249A6B0C00B40E2B /* DataController.swift */,
 				86074E99249A796600B40E2B /* RatingTabBarViewController.swift */,
 				86074E9B249A93A800B40E2B /* HistoryViewController.swift */,
+				86074E9D249A971E00B40E2B /* HistoryTableViewCell.swift */,
 				86074E762498E1EB00B40E2B /* Main.storyboard */,
 				86074E792498E1ED00B40E2B /* Assets.xcassets */,
 				86074E7B2498E1ED00B40E2B /* LaunchScreen.storyboard */,
@@ -153,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86074E9E249A971E00B40E2B /* HistoryTableViewCell.swift in Sources */,
 				86074E752498E1EB00B40E2B /* ViewController.swift in Sources */,
 				86074E98249A6B0C00B40E2B /* DataController.swift in Sources */,
 				86074E712498E1EB00B40E2B /* AppDelegate.swift in Sources */,

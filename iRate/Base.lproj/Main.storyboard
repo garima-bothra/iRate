@@ -157,7 +157,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="g8B-tp-59R">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="g8B-tp-59R" customClass="HistoryTableViewCell" customModule="iRate" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g8B-tp-59R" id="ckz-zP-ZVQ">
@@ -187,6 +187,10 @@
                                                 <constraint firstItem="w5T-M0-NeY" firstAttribute="leading" secondItem="ckz-zP-ZVQ" secondAttribute="leading" constant="20" id="9fr-2v-5OY"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="ratingDateLabel" destination="3h6-xx-how" id="q8w-fh-N22"/>
+                                            <outlet property="ratingLabel" destination="XbL-6N-kyD" id="3Ai-Cs-8KC"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
