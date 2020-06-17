@@ -41,9 +41,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 print("ViewController not found")
                 return
             }
+            guard let historyVC = storyboard.instantiateViewController(identifier: "historyVC") as? HistoryViewController else {
+                print("ViewController not found")
+                return
+            }
             rateVC.dataController = dataController
+            historyVC.dataController = dataController
             let navVC = UINavigationController(rootViewController: rateVC)
-            rootVC.setViewControllers([navVC], animated: true)
+            let navVC2 = UINavigationController(rootViewController: historyVC)
+            navVC.tabBarItem = UITabBarItem(title: "Rate", image: UIImage(systemName: "plus", withConfiguration: UIImage.SymbolConfiguration(weight: .heavy)), tag: 0)
+            navVC2.tabBarItem = UITabBarItem(title: "History", image: UIImage(systemName: "line.horizontal.3", withConfiguration: UIImage.SymbolConfiguration(weight: .heavy)), tag: 1)
+            rootVC.setViewControllers([navVC, navVC2], animated: true)
             //let rootNC = UINavigationController(rootViewController: rootVC)
             window.rootViewController = rootVC
        //     window.rootViewController = rootVC

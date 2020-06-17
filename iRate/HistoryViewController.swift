@@ -7,14 +7,33 @@
 //
 
 import UIKit
+import CoreData
 
 class HistoryViewController: UIViewController {
 
     @IBOutlet weak var historyTableView: UITableView!
-    
+
+    var dataController: DataController!
+
+    var fetchedResultsController: NSFetchedResultsController<Rating>!
+
+    fileprivate func setupFetchedResultsController() {
+        let fetchRequest: NSFetchRequest<Rating> = Rating.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key: "date", ascending: false)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: dataController.viewContext, sectionNameKeyPath: nil, cacheName: nil)
+        do {
+            try fetchedResultsController.performFetch()
+        } catch {
+            fatalError("THE FETCH FAILED: \(error.localizedDescription)")
+        }
+        fetchedResultsController.delegate = self
+    }
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupFetchedResultsController()
         // Do any additional setup after loading the view.
     }
     
@@ -32,13 +51,49 @@ class HistoryViewController: UIViewController {
 }
 
 extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
-    }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let rating = fetchedResultsController.object(at: indexPath)
+         let cell = tableView.dequeueReusableCell(withIdentifier: "history", for: indexPath) as! HistoryTableViewCell
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .short
+        cell.ratingDateLabel.text = dateFormatter.string(from: rating.date ?? Date())
+        cell.ratingLabel.text = "Rating: \(rating.rate)"
+        return cell
     }
 
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return fetchedResultsController.sections?.count ?? 1
+    }
 
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return fetchedResultsController.sections?[section].numberOfObjects ?? 0
+    }
+
+}
+
+//MARK: - NSFetchedResultsController Delegate Methods
+extension HistoryViewController: NSFetchedResultsControllerDelegate {
+
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        historyTableView.beginUpdates()
+    }
+
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        historyTableView.endUpdates()
+    }
+
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            historyTableView.insertRows(at: [newIndexPath!], with: .fade)
+            break
+        case .delete:
+            historyTableView.deleteRows(at: [indexPath!], with: .fade )
+            break
+        default:
+            break
+        }
+    }
 }

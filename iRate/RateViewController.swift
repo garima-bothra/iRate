@@ -46,6 +46,7 @@ class RateViewController: UIViewController {
         let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
         alertView.addAction(action)
         self.present(alertView, animated: true, completion: nil)
+        rating.value = 1.0
     }
 
 }

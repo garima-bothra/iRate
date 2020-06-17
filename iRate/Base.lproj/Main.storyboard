@@ -148,7 +148,7 @@
         <!--History View Controller-->
         <scene sceneID="Rom-qK-6yz">
             <objects>
-                <viewController id="Mmw-uP-aJa" customClass="HistoryViewController" customModule="iRate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="historyVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mmw-uP-aJa" customClass="HistoryViewController" customModule="iRate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4QO-kD-jaS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -157,7 +157,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="80" id="g8B-tp-59R" customClass="HistoryTableViewCell" customModule="iRate" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="history" rowHeight="80" id="g8B-tp-59R" customClass="HistoryTableViewCell" customModule="iRate" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="g8B-tp-59R" id="ckz-zP-ZVQ">
@@ -185,6 +185,8 @@
                                             <constraints>
                                                 <constraint firstItem="w5T-M0-NeY" firstAttribute="centerY" secondItem="ckz-zP-ZVQ" secondAttribute="centerY" id="62A-aH-IKs"/>
                                                 <constraint firstItem="w5T-M0-NeY" firstAttribute="leading" secondItem="ckz-zP-ZVQ" secondAttribute="leading" constant="20" id="9fr-2v-5OY"/>
+                                                <constraint firstItem="w5T-M0-NeY" firstAttribute="bottom" secondItem="ckz-zP-ZVQ" secondAttribute="bottomMargin" id="A8F-ve-sPc"/>
+                                                <constraint firstItem="w5T-M0-NeY" firstAttribute="top" secondItem="ckz-zP-ZVQ" secondAttribute="topMargin" id="RF8-go-qTC"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
