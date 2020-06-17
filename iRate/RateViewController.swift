@@ -32,6 +32,7 @@ class RateViewController: UIViewController {
 
     @IBAction func saveButtonPressed(_ sender: Any) {
         print("Rate: \(rating.value)")
+        print(Date())
     }
 
 }

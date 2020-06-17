@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var ratingStepper: UIStepper!
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var rateButton: UIButton!
+
+     let dataController = DataController(modelName: "Rating")
 
     override func viewDidLoad() {
         super.viewDidLoad()
