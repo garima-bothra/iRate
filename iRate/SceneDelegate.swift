@@ -14,10 +14,43 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     let dataController = DataController(modelName: "Rating")
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        dataController.load()
+        if let windowScene = scene as? UIWindowScene {
+            let window = UIWindow(windowScene: windowScene)
+            let controller = RatingTabBarViewController()
+            controller.dataController = dataController
+            controller.selectedIndex = 0
+//            let navigateController = UINavigationController(rootViewController: ViewController())
+//            let navigationController = controller.selectedViewController as! UINavigationController(rootViewController: ViewController())
+//            let selectedController = navigationController.viewControllers[0]
+//            let navigationController  = controller.selectedViewController as! UINavigationController
+//             let controllers = navigationController.viewControllers // will give array
+//             if controllers.count > 0 {
+//                 if let viewC = controllers[0] as? ViewController {
+//                    viewC.dataController = dataController
+//                // do desired work
+//                }
+//            }
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            guard let rootVC = storyboard.instantiateViewController(identifier: "TabBar") as? RatingTabBarViewController else {
+                print("ViewController not found")
+                return
+            }
+            rootVC.dataController = dataController
+            guard let rateVC = storyboard.instantiateViewController(identifier: "rate") as? ViewController else {
+                print("ViewController not found")
+                return
+            }
+            rateVC.dataController = dataController
+            let navVC = UINavigationController(rootViewController: rateVC)
+            rootVC.setViewControllers([navVC], animated: true)
+            //let rootNC = UINavigationController(rootViewController: rootVC)
+            window.rootViewController = rootVC
+       //     window.rootViewController = rootVC
+            self.window = window
+            window.makeKeyAndVisible()
+        }
+        //guard let _ = (scene as? UIWindowScene) else { return }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

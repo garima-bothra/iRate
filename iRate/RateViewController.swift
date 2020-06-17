@@ -7,12 +7,16 @@
 //
 
 import UIKit
-
+import CoreData
 class RateViewController: UIViewController {
 
     @IBOutlet weak var rating: UISlider!
     @IBOutlet weak var rateLabel: UILabel!
     var rateLimit: Int!
+    var dataController: DataController!
+
+    var fetchedResultsController: NSFetchedResultsController<Rating>!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,6 +37,15 @@ class RateViewController: UIViewController {
     @IBAction func saveButtonPressed(_ sender: Any) {
         print("Rate: \(rating.value)")
         print(Date())
+        let ratings = Rating(context: dataController.viewContext)
+        let rate: Int16 = Int16(rating.value)
+        ratings.rate = rate
+        ratings.date = Date()
+        try? dataController.viewContext.save()
+        let alertView = UIAlertController(title: "Success", message: "Your rating has been saved", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alertView.addAction(action)
+        self.present(alertView, animated: true, completion: nil)
     }
 
 }

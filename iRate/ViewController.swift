@@ -15,10 +15,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var rateLabel: UILabel!
     @IBOutlet weak var rateButton: UIButton!
 
-     let dataController = DataController(modelName: "Rating")
+    var dataController: DataController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        let tabController = self.tabBarController as! RatingTabBarViewController
+       // dataController = tabController.dataController
         ratingStepper.maximumValue = 9.0
         ratingStepper.minimumValue = 2.0
         // Do any additional setup after loading the view.
@@ -41,6 +43,7 @@ class ViewController: UIViewController {
         if segue.identifier == "rating" {
             let destination = segue.destination as! RateViewController
             destination.rateLimit = Int(ratingStepper.value)
+            destination.dataController = dataController
         }
     }
 

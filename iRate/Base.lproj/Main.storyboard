@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="iRate" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="rate" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="iRate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -127,10 +127,10 @@
             </objects>
             <point key="canvasLocation" x="2366.666666666667" y="-475.44642857142856"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Rating Tab Bar View Controller-->
         <scene sceneID="win-QC-mjq">
             <objects>
-                <tabBarController storyboardIdentifier="tabBar" id="K9A-zI-05T" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBar" useStoryboardIdentifierAsRestorationIdentifier="YES" id="K9A-zI-05T" customClass="RatingTabBarViewController" customModule="iRate" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EBq-e5-B1P">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -161,11 +161,11 @@
             </objects>
             <point key="canvasLocation" x="1584.057971014493" y="290.625"/>
         </scene>
-        <!--Item-->
+        <!--Rate-->
         <scene sceneID="ccl-zO-Vhl">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Qfg-Nd-2tU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Nfg-M3-GZY"/>
+                    <tabBarItem key="tabBarItem" title="Rate" id="Nfg-M3-GZY"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="1MT-la-cao">
                         <rect key="frame" x="0.0" y="44" width="414" height="96"/>
@@ -180,11 +180,11 @@
             </objects>
             <point key="canvasLocation" x="672.46376811594212" y="-475.44642857142856"/>
         </scene>
-        <!--Item-->
+        <!--History-->
         <scene sceneID="ag0-UZ-8Nz">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PUX-zQ-sRm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="2Cc-v4-N13"/>
+                    <tabBarItem key="tabBarItem" title="History" id="2Cc-v4-N13"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BbP-Uy-xOI">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
